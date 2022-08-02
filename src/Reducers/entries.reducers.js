@@ -1,4 +1,4 @@
-export default (state = initialEntries, action) => {
+const entriesReducers = (state = initialEntries, action) => {
     switch (action.type) {
         case "ADD_ENTRY":
             const newEntries = state.concat({ ...action.payload });
@@ -13,6 +13,8 @@ export default (state = initialEntries, action) => {
             return state;
     }
 };
+
+export default entriesReducers;
 
 var initialEntries = [
     {
