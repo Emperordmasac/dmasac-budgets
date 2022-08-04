@@ -2,11 +2,11 @@ import React from "react";
 import { Container } from "semantic-ui-react";
 import EntryLine from "./EntryLine";
 
-function EntryLines({ enteries, editEntry }) {
+function EntryLines({ enteries }) {
     return (
         <Container>
             {enteries.map((entry) => (
-                <EntryLine key={entry.id} {...entry} editEntry={editEntry} />
+                <EntryLine key={entry.id} {...entry} />
             ))}
         </Container>
     );

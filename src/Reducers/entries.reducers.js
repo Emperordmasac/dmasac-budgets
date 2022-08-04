@@ -1,14 +1,22 @@
 const entriesReducers = (state = initialEntries, action) => {
+    let newEntries;
     switch (action.type) {
         case "ADD_ENTRY":
-            const newEntries = state.concat({ ...action.payload });
+            newEntries = state.concat({ ...action.payload });
             return newEntries;
 
         case "REMOVE_ENTRY":
-            const editedEntries = state.filter(
+            newEntries = state.filter(
                 (entry) => entry.id !== action.payload.id
             );
-            return editedEntries;
+            return newEntries;
+        case "UPDATE_ENTRY":
+            newEntries = [...state];
+            const index = newEntries.findIndex(
+                (entry) => entry.id === action.payload.id
+            );
+            newEntries[index] = { ...action.payload.entry };
+            return newEntries;
         default:
             return state;
     }
