@@ -20,8 +20,7 @@ function App() {
     useEffect(() => {
         const index = enteries.findIndex((entry) => entry.id === id);
         setEntry(enteries[index]);
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [isOpen, id]);
+    }, [isOpen, id, enteries]);
 
     useEffect(() => {
         let totalIncomes = 0;
