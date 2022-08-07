@@ -9,7 +9,7 @@ const entriesReducers = (state = [], action) => {
             newEntries = state.concat({ ...action.payload });
             return newEntries;
 
-        case entryTypes.REMOVE_ENTRY:
+        case entryTypes.REMOVE_ENTRY_RESULT:
             newEntries = state.filter(
                 (entry) => entry.id !== action.payload.id
             );
