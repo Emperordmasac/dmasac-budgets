@@ -1,4 +1,4 @@
-import { take, put, fork, call } from "redux-saga/effects";
+import { take, put, fork, call, takeLatest } from "redux-saga/effects";
 import entryTypes, {
     populateEntriesValues,
     populateEntries,
@@ -38,7 +38,25 @@ export function* deleteEntrySaga() {
     }
 }
 
-const deleteEntries = (id) => {
-    axios.delete(`http://localhost:5000/entries/${id}`);
-    axios.delete(`http://localhost:5000/values/${id}`);
-};
+async function deleteEntries(id) {
+    await axios.delete(`http://localhost:5000/entries/${id}`);
+    await axios.delete(`http://localhost:5000/values/${id}`);
+}
+
+export function* addEntrySaga() {
+    yield takeLatest(entryTypes.ADD_ENTRY, addEntryToDB);
+}
+
+function* addEntryToDB({ payload }) {
+    yield call(addEntry, payload);
+    yield call(addValues, payload);
+    yield put({ type: entryTypes.ADD_ENTRY_RESULT, payload });
+}
+
+async function addEntry({ id, description }) {
+    await axios.post("http://localhost:5000/entries", { id, description });
+}
+
+async function addValues({ id, isExpense, value }) {
+    await axios.post("http://localhost:5000/values", { id, isExpense, value });
+}

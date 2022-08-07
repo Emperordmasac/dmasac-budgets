@@ -6,6 +6,7 @@ const types = {
     REMOVE_ENTRY: "REMOVE_ENTRY",
     UPDATE_ENTRY: "UPDATE_ENTRY",
     REMOVE_ENTRY_RESULT: "REMOVE_ENTRY_RESULT",
+    ADD_ENTRY_RESULT: "ADD_ENTRY_RESULT",
 };
 
 export default types;

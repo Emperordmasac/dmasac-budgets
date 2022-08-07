@@ -5,7 +5,7 @@ const entriesReducers = (state = [], action) => {
     switch (action.type) {
         case entryTypes.POPULATE_ENTRIES:
             return action.payload;
-        case entryTypes.ADD_ENTRY:
+        case entryTypes.ADD_ENTRY_RESULT:
             newEntries = state.concat({ ...action.payload });
             return newEntries;
 

@@ -5,12 +5,28 @@
       "description": "Work income"
     },
     {
+      "id": 2,
+      "description": "Water bill"
+    },
+    {
       "id": 3,
       "description": "Rent"
     },
     {
       "id": 4,
       "description": "Power bill"
+    },
+    {
+      "id": "2c594ddd-f182-43ca-acae-ea2b56fa761e",
+      "description": "AFAFAF"
+    },
+    {
+      "id": "c506bc27-2abf-4c7c-99ce-9446a22d3a1f",
+      "description": "JHHHH"
+    },
+    {
+      "id": "3c191713-b1c7-4a38-8b3b-5aefc3fcd8bb",
+      "description": "no funny business"
     }
   ],
   "values": [
@@ -18,6 +34,11 @@
       "id": 1,
       "value": 1000,
       "isExpense": false
+    },
+    {
+      "id": 2,
+      "value": 20,
+      "isExpense": true
     },
     {
       "id": 3,
@@ -28,6 +49,21 @@
       "id": 4,
       "value": 50,
       "isExpense": true
+    },
+    {
+      "id": "2c594ddd-f182-43ca-acae-ea2b56fa761e",
+      "isExpense": true,
+      "value": "555666"
+    },
+    {
+      "id": "c506bc27-2abf-4c7c-99ce-9446a22d3a1f",
+      "isExpense": true,
+      "value": "74747"
+    },
+    {
+      "id": "3c191713-b1c7-4a38-8b3b-5aefc3fcd8bb",
+      "isExpense": false,
+      "value": "1000000"
     }
   ]
 }
