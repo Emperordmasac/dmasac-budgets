@@ -7,19 +7,13 @@ import axios from "axios";
 
 export function* getAllEntries() {
     yield take(entryTypes.GET_ENTRIES);
-    console.log("I need to get the files nwww");
     const { data } = yield axios.get("http://localhost:5000/entries");
     yield put(populateEntries(data));
 }
 
 export function* getEntryDetails(id) {
     const { data } = yield call(axios, `http://localhost:5000/values/${id}`);
-    console.log(data);
     yield put(populateEntriesValues(id, data));
-    // yield put({
-    //     type: entryTypes.POPULATE_ENTRIES_VALUES,
-    //     payload: { id, entry: data },
-    // });
 }
 
 export function* getAllEntryDetails() {
